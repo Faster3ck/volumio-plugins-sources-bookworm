@@ -1,14 +1,13 @@
 [Unit]
-Description=Service for using pirate audio display in volumio
-After=syslog.target
+Description=Service for using Pirate Audio display in volumio
 
 [Service]
 Type=simple
 ExecStart=/data/plugins/system_hardware/pirateaudio/venv/bin/python \
          /data/plugins/system_hardware/pirateaudio/display.py
 Restart=always
-StandardOutput=syslog
-StandardError=syslog
+StandardOutput=journal
+StandardError=journal
 SyslogIdentifier=volumio
 User=volumio
 Group=volumio
